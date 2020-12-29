@@ -17,6 +17,18 @@ public class WaveConfig : ScriptableObject
         return obstaclePrefab;
     }
 
+    public List<Transform> GetWaypointsList()
+    {
+        var waypoints = new List<Transform>(); //list which holds each path
+
+        foreach (Transform child in pathPrefab.transform) //for each waypoint in each path of the list
+        {
+            waypoints.Add(child);
+        }
+
+        return waypoints;
+    }
+
     public float GetTimeBetweenSpawns()
     {
         return timeBetweenSpawns;
@@ -35,18 +47,6 @@ public class WaveConfig : ScriptableObject
     public float GetObstMoveSpeed()
     {
         return obstacleMoveSpeed;
-    }
-
-    public List<Transform> GetWaypointsList()
-    {
-        var waypoints = new List<Transform>(); //list which holds each path
-
-        foreach (Transform child in pathPrefab.transform) //for each waypoint in each path of the list
-        {
-            waypoints.Add(child);
-        }
-
-        return waypoints;
     }
 
     // Start is called before the first frame update

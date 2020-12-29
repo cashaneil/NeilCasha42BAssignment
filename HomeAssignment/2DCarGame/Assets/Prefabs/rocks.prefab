@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4460084675752572611
+--- !u!1 &460887471235198083
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5135795655946805987}
-  - component: {fileID: 3025455894692920521}
-  - component: {fileID: -1619998608877657973}
+  - component: {fileID: 1751855146857915399}
+  - component: {fileID: 4871328728799216047}
+  - component: {fileID: -1959951708225368437}
   m_Layer: 0
   m_Name: rocks
   m_TagString: Untagged
@@ -18,27 +18,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5135795655946805987
+--- !u!4 &1751855146857915399
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4460084675752572611}
+  m_GameObject: {fileID: 460887471235198083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.06, y: 8.97, z: 0}
+  m_LocalScale: {x: 0.09844697, y: 0.09844697, z: 0.09844697}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3025455894692920521
+--- !u!212 &4871328728799216047
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4460084675752572611}
+  m_GameObject: {fileID: 460887471235198083}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,17 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1619998608877657973
+--- !u!114 &-1959951708225368437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4460084675752572611}
+  m_GameObject: {fileID: 460887471235198083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6be864e63478644da2afa9561299e14, type: 3}
+  m_Script: {fileID: 11500000, guid: c153493fcb451254283e8e2c4ad22474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointsList: []
-  waveConfig: {fileID: 0}
+  damage: 1

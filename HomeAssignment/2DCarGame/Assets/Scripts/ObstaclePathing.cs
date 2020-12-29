@@ -5,17 +5,16 @@ using UnityEngine;
 public class ObstaclePathing : MonoBehaviour
 {
     [SerializeField] List<Transform> waypointsList;
-    [SerializeField] float obstacleSpeed = 0.01f;
-
-    [SerializeField] WaveConfig waveconfig;
+    [SerializeField] float obstMoveSpeed = 0.5f;
+    [SerializeField] WaveConfig waveConfig;
 
     int waypointsIndex = 0;//current waypoint
     
     // Start is called before the first frame update
     void Start()
     {
-        waypointsList = waveconfig.GetWaypointsList();
-
+        waypointsList = waveConfig.GetWaypointsList();
+        
         transform.position = waypointsList[waypointsIndex].transform.position;//set the position of the enemy to position of the 1st waypoint
     }
 
@@ -29,14 +28,14 @@ public class ObstaclePathing : MonoBehaviour
     {
         if (waypointsIndex <= waypointsList.Count - 1)
         {
-            //next waypointg
+            //next waypoint
             var targetPosition = waypointsList[waypointsIndex].transform.position;
 
             targetPosition.z = 0f;
 
-            var obstacleMovement = obstacleSpeed * Time.deltaTime;
+            var obstacleMovement = waveConfig.GetObstMoveSpeed() * Time.deltaTime;
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, obstacleSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, obstacleMovement);
 
             if (transform.position == targetPosition)
             {
