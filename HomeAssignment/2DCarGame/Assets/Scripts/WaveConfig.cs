@@ -19,9 +19,9 @@ public class WaveConfig : ScriptableObject
 
     public List<Transform> GetWaypointsList()
     {
-        var waypoints = new List<Transform>(); //list which holds each path
+        var waypoints = new List<Transform>();
 
-        foreach (Transform child in pathPrefab.transform) //for each waypoint in each path of the list
+        foreach (Transform child in pathPrefab.transform)
         {
             waypoints.Add(child);
         }

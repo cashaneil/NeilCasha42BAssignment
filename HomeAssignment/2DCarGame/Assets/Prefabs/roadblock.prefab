@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6110102183625402623}
   - component: {fileID: 4096780847159195693}
   - component: {fileID: 8193528717000524744}
+  - component: {fileID: 4948042746929724845}
+  - component: {fileID: -5665315156556282159}
   m_Layer: 0
   m_Name: roadblock
   m_TagString: Untagged
@@ -27,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7592316595198360794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.906, y: -0.886, z: 0}
+  m_LocalScale: {x: 0.32481968, y: 0.32481968, z: 0.32481968}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypointsList: []
   obstMoveSpeed: 0.01
+  waveConfig: {fileID: 0}
 --- !u!114 &8193528717000524744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,3 +114,100 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+--- !u!50 &4948042746929724845
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592316595198360794}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &-5665315156556282159
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592316595198360794}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.03, y: -0.47}
+      - {x: 1.03, y: -1.64}
+      - {x: 0.83, y: -1.64}
+      - {x: 0.71, y: -1.6999999}
+      - {x: 0.71999997, y: -1.92}
+      - {x: 0.82, y: -1.9799999}
+      - {x: 2.1699998, y: -1.9799999}
+      - {x: 2.27, y: -1.91}
+      - {x: 2.29, y: -1.6999999}
+      - {x: 2.12, y: -1.62}
+      - {x: 1.9699999, y: -1.64}
+      - {x: 2.26, y: -0.47}
+      - {x: 2.32, y: -0.48}
+      - {x: 2.52, y: -0.34}
+      - {x: 2.56, y: -0.22999999}
+      - {x: 2.56, y: 1.16}
+      - {x: 2.55, y: 1.23}
+      - {x: 2.29, y: 1.42}
+      - {x: 1.99, y: 1.38}
+      - {x: 1.9599999, y: 1.6899999}
+      - {x: 1.89, y: 1.8399999}
+      - {x: 1.66, y: 1.9799999}
+      - {x: 1.37, y: 1.9799999}
+      - {x: 1.18, y: 1.88}
+      - {x: 1.04, y: 1.6899999}
+      - {x: 1.02, y: 1.38}
+      - {x: -1.03, y: 1.37}
+      - {x: -1.03, y: 1.62}
+      - {x: -1.0699999, y: 1.76}
+      - {x: -1.25, y: 1.9399999}
+      - {x: -1.3199999, y: 1.9799999}
+      - {x: -1.66, y: 1.9799999}
+      - {x: -1.8299999, y: 1.9}
+      - {x: -1.99, y: 1.62}
+      - {x: -1.9799999, y: 1.37}
+      - {x: -2.31, y: 1.38}
+      - {x: -2.46, y: 1.29}
+      - {x: -2.54, y: 1.18}
+      - {x: -2.56, y: 1.13}
+      - {x: -2.56, y: -0.26}
+      - {x: -2.53, y: -0.34}
+      - {x: -2.32, y: -0.48}
+      - {x: -1.9699999, y: -0.48}
+      - {x: -1.9699999, y: -1.64}
+      - {x: -2.1299999, y: -1.5899999}
+      - {x: -2.36, y: -1.78}
+      - {x: -2.23, y: -1.9799999}
+      - {x: -0.83, y: -1.9799999}
+      - {x: -0.66999996, y: -1.9}
+      - {x: -0.78, y: -1.5999999}
+      - {x: -1.02, y: -1.63}

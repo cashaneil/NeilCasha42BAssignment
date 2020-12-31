@@ -4,31 +4,49 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] List<WaveConfig> WaveConfigsList; //list of waves
-    
-    int startingWave = 0; //0 = wave(1)
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        var currentWave = WaveConfigsList[startingWave];
+    [SerializeField] List<WaveConfig> waveConfigsList;
 
-        StartCoroutine(SpawnAllObstInWave(currentWave));
+    [SerializeField] bool looping = false;
+
+    int startingWave = 0;
+
+    // Start is called before the first frame update
+    IEnumerator Start()
+    {
+        do
+        {
+            yield return StartCoroutine(SpawnAllWaves());
+        } while (looping == true);
+
+        StartCoroutine(SpawnAllWaves());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private IEnumerator SpawnAllObstInWave(WaveConfig waveconfig) //which wave to spawn
+    private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveToSpawn)
     {
-        Instantiate(
-            waveconfig.GetObstaclePrefab(),
-            waveconfig.GetWaypointsList()[0].transform.position,
-        Quaternion.identity);
+        for (int obstacleCount = 1; obstacleCount <= waveToSpawn.GetNoOfObstacles(); obstacleCount++)
+        {
+            var newObst = Instantiate(
+                waveToSpawn.GetObstaclePrefab(),
+                waveToSpawn.GetWaypointsList()[0].transform.position,
+                Quaternion.identity) as GameObject;
 
-        yield return new WaitForSeconds(waveconfig.GetTimeBetweenSpawns());
+            newObst.GetComponent<ObstaclePathing>().SetWaveConfig(waveToSpawn);
+
+            yield return new WaitForSeconds(waveToSpawn.GetTimeBetweenSpawns());
+        }
+    }
+
+    private IEnumerator SpawnAllWaves()
+    {
+        foreach (WaveConfig currentWave in waveConfigsList)
+        {
+            yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+        }
     }
 }

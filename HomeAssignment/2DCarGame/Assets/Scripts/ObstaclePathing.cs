@@ -8,14 +8,14 @@ public class ObstaclePathing : MonoBehaviour
     [SerializeField] float obstMoveSpeed = 0.5f;
     [SerializeField] WaveConfig waveConfig;
 
-    int waypointsIndex = 0;//current waypoint
+    int waypointsIndex = 0;
     
     // Start is called before the first frame update
     void Start()
     {
         waypointsList = waveConfig.GetWaypointsList();
         
-        transform.position = waypointsList[waypointsIndex].transform.position;//set the position of the enemy to position of the 1st waypoint
+        transform.position = waypointsList[waypointsIndex].transform.position;
     }
 
     // Update is called once per frame
@@ -28,7 +28,6 @@ public class ObstaclePathing : MonoBehaviour
     {
         if (waypointsIndex <= waypointsList.Count - 1)
         {
-            //next waypoint
             var targetPosition = waypointsList[waypointsIndex].transform.position;
 
             targetPosition.z = 0f;
@@ -47,5 +46,10 @@ public class ObstaclePathing : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetWaveConfig(WaveConfig waveConfigToSet)
+    {
+        waveConfig = waveConfigToSet;
     }
 }
