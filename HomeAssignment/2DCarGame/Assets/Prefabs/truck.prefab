@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c153493fcb451254283e8e2c4ad22474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 5
 --- !u!50 &-1071240309649247514
 Rigidbody2D:
   serializedVersion: 4
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotCount: 0
-  minTimeBetweenShots: 0.2
+  minTimeBetweenShots: 0.7
   maxTimeBetweenShots: 1
   bulletPrefab: {fileID: 6284796201116529678, guid: 331870087e490a54a974f635d6d44af0, type: 3}
-  obstBulletSpeed: 4
+  obstBulletSpeed: 5

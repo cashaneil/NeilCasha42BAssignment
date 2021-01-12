@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotCount: 0
-  minTimeBetweenShots: 0.2
+  minTimeBetweenShots: 0.7
   maxTimeBetweenShots: 1
   bulletPrefab: {fileID: 6284796201116529678, guid: 331870087e490a54a974f635d6d44af0, type: 3}
-  obstBulletSpeed: 4
+  obstBulletSpeed: 5

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] AudioClip playerDeathSound;
+    [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.75f;
+
+    [SerializeField] float health = 50f;
+    
     [SerializeField] float playerSpeed = 10.0f;
     
     [SerializeField] float padding = 0.7f;
@@ -19,6 +24,29 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    private void OnTriggerEnter2D(Collider2D otherObject)
+    {
+        DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
+
+        ProcessHit(dmgDealer);
+    }
+
+    private void ProcessHit(DamageDealer dmgDealer)
+    {
+        health -= dmgDealer.GetDamage();
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
     }
 
     private void SetUpMoveBoundaries()
