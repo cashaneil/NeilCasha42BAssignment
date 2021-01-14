@@ -140,6 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57ebe30a12cc3646b686eb35ec8af96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDeathSound: {fileID: 0}
+  playerDeathSoundVolume: 0.75
+  health: 50
   playerSpeed: 1.2
   padding: 0.5
 --- !u!1 &1165915560
@@ -335,6 +338,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4402361769591085610, guid: 2c55526ba75cf924997fac5664510772, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5923407299064924436, guid: 2c55526ba75cf924997fac5664510772, type: 3}
       propertyPath: m_Name
       value: MusicPlayer
@@ -865,7 +872,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7266712769634759555, guid: e37db008e74919840b17c71881c8ddf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7397864
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7266712769634759555, guid: e37db008e74919840b17c71881c8ddf1, type: 3}
       propertyPath: m_LocalPosition.y
