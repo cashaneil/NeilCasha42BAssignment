@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.75f;
 
     [SerializeField] float health = 50f;
+
+    int playerScore = 0;
     
     [SerializeField] float playerSpeed = 10.0f;
     
@@ -37,8 +39,9 @@ public class Player : MonoBehaviour
     private void ProcessHit(DamageDealer dmgDealer)
     {
         health -= dmgDealer.GetDamage();
+        playerScore = FindObjectOfType<GameSession>().GetScore();
 
-        if (health <= 0)
+        if (health <= 0 && playerScore < 100)
         {
             Die();
         }
@@ -48,6 +51,8 @@ public class Player : MonoBehaviour
     {
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
+
+        FindObjectOfType<Level>().LoadGameOver();
     }
 
     private void SetUpMoveBoundaries()

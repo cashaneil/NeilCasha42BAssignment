@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6813000846873550111}
   - component: {fileID: -5087672414431336097}
   - component: {fileID: 1169054471795344227}
-  - component: {fileID: -1838233103530029942}
   - component: {fileID: 8319673402413726999}
   - component: {fileID: -1554808054835039632}
+  - component: {fileID: -2459683918119683739}
   m_Layer: 9
   m_Name: enemy
   m_TagString: Untagged
@@ -115,27 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 4
---- !u!50 &-1838233103530029942
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2673235844741761523}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &8319673402413726999
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -300,3 +279,24 @@ MonoBehaviour:
   obstacleDeathSoundVolume: 0.2
   deathVisualFX: {fileID: 6810563548490700429, guid: 7aae74b2831e2db49839cc25e18f3973, type: 3}
   explosionDuration: 1
+--- !u!50 &-2459683918119683739
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673235844741761523}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

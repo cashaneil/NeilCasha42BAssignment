@@ -17,6 +17,8 @@ public class Obstacle : MonoBehaviour
     [SerializeField] GameObject deathVisualFX;
     [SerializeField] float explosionDuration = 1f;
 
+    [SerializeField] int scoreValue = 5;
+
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
         DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
@@ -37,6 +39,8 @@ public class Obstacle : MonoBehaviour
         GameObject explosion = Instantiate(deathVisualFX, transform.position, Quaternion.identity);
 
         Destroy(explosion, explosionDuration);
+
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
     }
 
     // Start is called before the first frame update
