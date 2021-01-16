@@ -39,8 +39,6 @@ public class Obstacle : MonoBehaviour
         GameObject explosion = Instantiate(deathVisualFX, transform.position, Quaternion.identity);
 
         Destroy(explosion, explosionDuration);
-
-        FindObjectOfType<GameSession>().AddToScore(scoreValue);
     }
 
     // Start is called before the first frame update
