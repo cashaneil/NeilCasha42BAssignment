@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip playerDeathSound;
     [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.75f;
 
-    [SerializeField] float health = 50f;
+    [SerializeField] int health = 50;
 
     int playerScore = 0;
     
@@ -29,6 +29,11 @@ public class Player : MonoBehaviour
         Move();
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
         DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
@@ -41,18 +46,35 @@ public class Player : MonoBehaviour
         health -= dmgDealer.GetDamage();
         playerScore = FindObjectOfType<GameSession>().GetScore();
 
+        int sceneToLoad;
+
         if (health <= 0 && playerScore < 100)
         {
-            Die();
+            health = 0; //to hide minus value
+            sceneToLoad = 0;
+            Die(sceneToLoad);
+        }
+        else if (health <= 0 && playerScore >= 100)
+        {
+            health = 0; //to hide minus value
+            sceneToLoad = 1;
+            Die(sceneToLoad);
         }
     }
 
-    private void Die()
+    private void Die(int loadScene)
     {
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
 
-        FindObjectOfType<Level>().LoadGameOver();
+        if(loadScene == 0)
+        {
+            FindObjectOfType<Level>().LoadGameOver();
+        }
+        else if(loadScene == 1)
+        {
+            FindObjectOfType<Level>().LoadWinnerScene();
+        }
     }
 
     private void SetUpMoveBoundaries()

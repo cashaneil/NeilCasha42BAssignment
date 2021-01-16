@@ -222,6 +222,7 @@ MonoBehaviour:
   obstacleDeathSoundVolume: 0.2
   deathVisualFX: {fileID: 6810563548490700429, guid: 7aae74b2831e2db49839cc25e18f3973, type: 3}
   explosionDuration: 1
+  scoreValue: 5
 --- !u!50 &-8348193916383635040
 Rigidbody2D:
   serializedVersion: 4
